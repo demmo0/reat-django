@@ -20,5 +20,10 @@ from frontend.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',ReactView.as_view(), name = 'anything')
+    path('',ReactView.as_view(), name = 'anything'),
+    path('api/auth/register/', RegisterView.as_view(), name='register'),
+    path('api/auth/', include('dj_rest_auth.urls')),
+    path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
 ]
+
+
