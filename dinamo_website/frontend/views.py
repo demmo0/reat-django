@@ -26,3 +26,10 @@ User = get_user_model()
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
+    
+    def check_authentication(request):
+        
+        if User.authorization is True:
+            return Response(True)
+        else: 
+            return Response(False)
