@@ -11,5 +11,14 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+class Article(models.Model):
+    
+    title = models.CharField(max_length=150,blank=True)
+    image = models.ImageField(blank=True)
+    article = models.TextField(null=True,blank=True)
+    order = models.CharField(max_length=5)
+    active = models.BooleanField(default=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
     
     

@@ -24,7 +24,9 @@ urlpatterns = [
     path('api/auth/register/', RegisterView.as_view(), name='register'),
     path('api/auth/', include('dj_rest_auth.urls')),
     path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('check_authorization/', RegisterView.check_authentication, name='authorization')
+    path('check_authorization/', CheckAuthorizationView.as_view(), name='authorization'),
+    path('articles/', ArticleView.as_view(), name='article-list-create'),
+    path('articles/<int:pk>/', ArticleEditView.as_view(), name='article-edit'),
 ]
 
 

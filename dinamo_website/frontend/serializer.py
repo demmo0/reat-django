@@ -29,3 +29,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             can_edit_site=validated_data.get('can_edit_site', False)
         )
         return user
+
+class ArticleSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Article
+        fields = ['title','image','article','order','active','uploaded_at']
