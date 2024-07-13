@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
+from django.http import Http404
 
 # Create your views here.
 class ReactView(APIView):
